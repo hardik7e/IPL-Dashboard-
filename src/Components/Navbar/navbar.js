@@ -17,6 +17,8 @@ import SportsCricketIcon from '@material-ui/icons/SportsCricket';
 import ListItemText from '@material-ui/core/ListItemText';
 import AccessibilityIcon from '@material-ui/icons/Accessibility';
 import { ListItemIcon } from '@material-ui/core'
+import { Link } from 'react-router-dom'
+import FiberNewIcon from '@material-ui/icons/FiberNew';
 
 const drawerWidth = 240;
 
@@ -121,19 +123,22 @@ function Navbar() {
             {theme.direction === 'ltr' ? <ChevronLeftIcon /> : <ChevronRightIcon />}
           </IconButton>
         </div>
-        <Divider />
         <List>
-          <ListItem>
+        <Link to="/" style={{textDecoration:"none",color:"black"}}><ListItem button key={"Match Details"}>
             <ListItemIcon><SportsCricketIcon/></ListItemIcon>
             <ListItemText>Match Details</ListItemText>
-          </ListItem>
+          </ListItem></Link>
+          <Link to="/updates" style={{textDecoration:"none",color:"black"}}><ListItem button key={"Players Details"}>
+           <ListItemIcon ><AccessibilityIcon/></ListItemIcon>
+           <ListItemText>Players Details</ListItemText>
+         </ListItem></Link>
         </List>
         <Divider />
         <List>
-         <ListItem>
-           <ListItemIcon ><AccessibilityIcon/></ListItemIcon>
-           <ListItemText>Players Details</ListItemText>
-         </ListItem>
+          <Link to="/updates" style={{textDecoration:"none",color:"black"}}><ListItem button key="Upcoming Features">
+            <ListItemIcon><FiberNewIcon/></ListItemIcon>
+            <ListItemText>Upcoming Features</ListItemText>
+          </ListItem></Link>
         </List>
       </Drawer>
       </div>
